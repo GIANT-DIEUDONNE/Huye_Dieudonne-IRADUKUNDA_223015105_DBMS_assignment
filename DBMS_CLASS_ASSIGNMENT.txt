@@ -1,0 +1,311 @@
+
+mysql> CREATE DATABASE RUHANDE;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> USE RUAHANDE;
+ERROR 1049 (42000): Unknown database 'ruahande'
+mysql> USE RUHANDE;
+Database changed
+mysql> CREATE TABLE NGOMA(ID(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHAR(255),DISTRICT VARCHAR(255),SECTOR VARCHAR(255),CELL VARCHAR(255),EMAIL VARCHAR(255),TELEPHONE INT(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHA' at line 1
+mysql> CREATE TABLE NGOMA(ID(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHAR(255),DISTRICT VARCHAR(255),SECTOR VARCHAR(255),CELL VARCHAR(255),EMAIL VARCHAR(255),TELEPHONE INT(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHA' at line 1
+mysql> CREATE TABLE NGOMA(ID INT(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHAR(255),DISTRICT VARCHAR(255),SECTOR VARCHAR(255),CELL VARCHAR(255),EMAIL VARCHAR(255),TELEPHONE INT(10));
+Query OK, 0 rows affected, 2 warnings (0.01 sec)
+
+mysql> insert into ngoma values(1,"dieudonne","irakoze","M","south","huye","ngoma","ruhande"."diori@gmail.com",0780808012);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '."diori@gmail.com",0780808012)' at line 1
+mysql> insert into ngoma values(1,"dieudonne","irakoze","M","south","huye","ngoma","ruhande"."diori@gmail.com",0780808012);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '."diori@gmail.com",0780808012)' at line 1
+mysql> insert into ngoma values(1,"dieudonne","irakoze","M","south","huye","ngoma","ruhande","diori@gmail.com",0780808012);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values(2,"HABINGABIRE","Olivier","M","south","nyaruguru","kaganda","murehe","habi@gmail.com",0780823712);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values(2,"HABINGABIRE","Olivier","M","south","nyaruguru","kaganda","murehe","habi@gmail.com",0782323232);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into ngoma values(2,"HABINGABIRE","bahati","M","west","karongi","kaganda","gitega","hatii@gmail.com",07808231232);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(2,"Tuyishime","nadia","F","west","NYAMASHEKE","BUSOGO","gitega","nadi@gmail.com",07898231232);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(6,"HABINEZA","bahati","M","west","karongi","kaganda","gitega","hBANEZi@gmail.com",07808201232);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(6,"TUYISHIME","mary","F","east","nyagatare","kaganda","gitega","mary@gmail.com",07908201232);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(8,"TUYISHIME","BANI","F","east","nyagatare","kaganda","gitega","bani@gmail.com",07918201232);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(9,"manirafasha","sala","F","east","nyagatare","nyarupfubire","gitega","sala@gmail.com",07918201236);
+Query OK, 1 row affected, 1 warning (0.00 sec)
+
+mysql> insert into ngoma values(10,"maniragaba","saddy","M","east","nyagatare","nyarupfubire","NYABUBARE","SADDY@gmail.com",07918204536);
+Query OK, 1 row affected, 1 warning (0.01 sec)
+
+mysql> SELECT * FROM NGOMA;
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+| ID   | F_NAME      | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR       | CELL      | EMAIL             | TELEPHONE  |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+|    1 | dieudonne   | irakoze | M      | south    | huye       | ngoma        | ruhande   | diori@gmail.com   |  780808012 |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  780823712 |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  782323232 |
+|    2 | HABINGABIRE | bahati  | M      | west     | karongi    | kaganda      | gitega    | hatii@gmail.com   | 2147483647 |
+|    2 | Tuyishime   | nadia   | F      | west     | NYAMASHEKE | BUSOGO       | gitega    | nadi@gmail.com    | 2147483647 |
+|    6 | HABINEZA    | bahati  | M      | west     | karongi    | kaganda      | gitega    | hBANEZi@gmail.com | 2147483647 |
+|    6 | TUYISHIME   | mary    | F      | east     | nyagatare  | kaganda      | gitega    | mary@gmail.com    | 2147483647 |
+|    8 | TUYISHIME   | BANI    | F      | east     | nyagatare  | kaganda      | gitega    | bani@gmail.com    | 2147483647 |
+|    9 | manirafasha | sala    | F      | east     | nyagatare  | nyarupfubire | gitega    | sala@gmail.com    | 2147483647 |
+|   10 | maniragaba  | saddy   | M      | east     | nyagatare  | nyarupfubire | NYABUBARE | SADDY@gmail.com   | 2147483647 |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set id="3"where telephone="782323232";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set id="4"where telephone="2147483647";
+Query OK, 7 rows affected (0.00 sec)
+Rows matched: 7  Changed: 7  Warnings: 0
+
+mysql> update ngoma set id="5"where telephone="2147483647";
+Query OK, 7 rows affected (0.00 sec)
+Rows matched: 7  Changed: 7  Warnings: 0
+
+mysql> update ngoma set id="7"where telephone="2147483647";
+Query OK, 7 rows affected (0.00 sec)
+Rows matched: 7  Changed: 7  Warnings: 0
+
+mysql> select * from ngoma;
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+| ID   | F_NAME      | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR       | CELL      | EMAIL             | TELEPHONE  |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+|    1 | dieudonne   | irakoze | M      | south    | huye       | ngoma        | ruhande   | diori@gmail.com   |  780808012 |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  780823712 |
+|    3 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  782323232 |
+|    7 | HABINGABIRE | bahati  | M      | west     | karongi    | kaganda      | gitega    | hatii@gmail.com   | 2147483647 |
+|    7 | Tuyishime   | nadia   | F      | west     | NYAMASHEKE | BUSOGO       | gitega    | nadi@gmail.com    | 2147483647 |
+|    7 | HABINEZA    | bahati  | M      | west     | karongi    | kaganda      | gitega    | hBANEZi@gmail.com | 2147483647 |
+|    7 | TUYISHIME   | mary    | F      | east     | nyagatare  | kaganda      | gitega    | mary@gmail.com    | 2147483647 |
+|    7 | TUYISHIME   | BANI    | F      | east     | nyagatare  | kaganda      | gitega    | bani@gmail.com    | 2147483647 |
+|    7 | manirafasha | sala    | F      | east     | nyagatare  | nyarupfubire | gitega    | sala@gmail.com    | 2147483647 |
+|    7 | maniragaba  | saddy   | M      | east     | nyagatare  | nyarupfubire | NYABUBARE | SADDY@gmail.com   | 2147483647 |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> CREATE TABLE NGOMA(ID INT(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHAR(255),DISTRICT VARCHAR(255),SECTOR VARCHAR(255),CELL VARCHAR(255),EMAIL VARCHAR(255),TELEPHONE INT(10));
+ERROR 1050 (42S01): Table 'ngoma' already exists
+mysql>
+mysql> CREATE TABLE NGOMA(ID INT(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHAR(255),DISTRICT VARCHAR(255),SECTOR VARCHAR(255),CELL VARCHAR(255),EMAIL VARCHAR(255),TELEPHONE INT(10));
+ERROR 1050 (42S01): Table 'ngoma' already exists
+mysql> CREATE TABLE NGOMA(ID INT(16),F_NAME VARCHAR(255),L_NAME VARCHAR(255),GENDER VARCHAR(255),PROVINCE VARCHAR(255),DISTRICT VARCHAR(255),SECTOR VARCHAR(255),CELL VARCHAR(255),EMAIL VARCHAR(255),TELEPHONE INT(10));
+ERROR 1050 (42S01): Table 'ngoma' already exists
+mysql> update ngoma set ID="4" WHERE EMAIL="hatii@gmail.com";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set ID="5" WHERE EMAIL="nadi@gmail.com";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set ID="6" WHERE EMAIL="hBANEZi@gmail.com";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set ID="7" WHERE EMAIL="mary@gmail.com";
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+mysql> SELECT * FROM NGOMA;
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+| ID   | F_NAME      | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR       | CELL      | EMAIL             | TELEPHONE  |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+|    1 | dieudonne   | irakoze | M      | south    | huye       | ngoma        | ruhande   | diori@gmail.com   |  780808012 |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  780823712 |
+|    3 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  782323232 |
+|    4 | HABINGABIRE | bahati  | M      | west     | karongi    | kaganda      | gitega    | hatii@gmail.com   | 2147483647 |
+|    5 | Tuyishime   | nadia   | F      | west     | NYAMASHEKE | BUSOGO       | gitega    | nadi@gmail.com    | 2147483647 |
+|    6 | HABINEZA    | bahati  | M      | west     | karongi    | kaganda      | gitega    | hBANEZi@gmail.com | 2147483647 |
+|    7 | TUYISHIME   | mary    | F      | east     | nyagatare  | kaganda      | gitega    | mary@gmail.com    | 2147483647 |
+|    7 | TUYISHIME   | BANI    | F      | east     | nyagatare  | kaganda      | gitega    | bani@gmail.com    | 2147483647 |
+|    7 | manirafasha | sala    | F      | east     | nyagatare  | nyarupfubire | gitega    | sala@gmail.com    | 2147483647 |
+|    7 | maniragaba  | saddy   | M      | east     | nyagatare  | nyarupfubire | NYABUBARE | SADDY@gmail.com   | 2147483647 |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> update ngoma set ID="8" WHERE EMAIL="bani@gmail.com";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set ID="9" WHERE EMAIL="sala@gmail.com";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update ngoma set ID="10" WHERE EMAIL="SADDY@gmail.com";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM NGOMA;
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+| ID   | F_NAME      | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR       | CELL      | EMAIL             | TELEPHONE  |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+|    1 | dieudonne   | irakoze | M      | south    | huye       | ngoma        | ruhande   | diori@gmail.com   |  780808012 |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  780823712 |
+|    3 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  782323232 |
+|    4 | HABINGABIRE | bahati  | M      | west     | karongi    | kaganda      | gitega    | hatii@gmail.com   | 2147483647 |
+|    5 | Tuyishime   | nadia   | F      | west     | NYAMASHEKE | BUSOGO       | gitega    | nadi@gmail.com    | 2147483647 |
+|    6 | HABINEZA    | bahati  | M      | west     | karongi    | kaganda      | gitega    | hBANEZi@gmail.com | 2147483647 |
+|    7 | TUYISHIME   | mary    | F      | east     | nyagatare  | kaganda      | gitega    | mary@gmail.com    | 2147483647 |
+|    8 | TUYISHIME   | BANI    | F      | east     | nyagatare  | kaganda      | gitega    | bani@gmail.com    | 2147483647 |
+|    9 | manirafasha | sala    | F      | east     | nyagatare  | nyarupfubire | gitega    | sala@gmail.com    | 2147483647 |
+|   10 | maniragaba  | saddy   | M      | east     | nyagatare  | nyarupfubire | NYABUBARE | SADDY@gmail.com   | 2147483647 |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA ADD ISIBO VARCHAR(255);
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE NGOMA;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| ID        | int          | YES  |     | NULL    |       |
+| F_NAME    | varchar(255) | YES  |     | NULL    |       |
+| L_NAME    | varchar(255) | YES  |     | NULL    |       |
+| GENDER    | varchar(255) | YES  |     | NULL    |       |
+| PROVINCE  | varchar(255) | YES  |     | NULL    |       |
+| DISTRICT  | varchar(255) | YES  |     | NULL    |       |
+| SECTOR    | varchar(255) | YES  |     | NULL    |       |
+| CELL      | varchar(255) | YES  |     | NULL    |       |
+| EMAIL     | varchar(255) | YES  |     | NULL    |       |
+| TELEPHONE | int          | YES  |     | NULL    |       |
+| ISIBO     | varchar(255) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> UPDATE NGOMA SET ISIBO="AGACIRO" WHERE ID="1";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="UBUDAHERANYWA" WHERE ID="2";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="TWITANGIRIGIHUGU" WHERE ID="3";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="UMURAVA" WHERE ID="4";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="INYANGAMUGAYO" WHERE ID="5";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="UBUDAKEMWA" WHERE ID="6";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="AGACIRO" WHERE ID="7";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="AGACIRO" WHERE ID="8";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="UBUDAKEMWA" WHERE ID="9";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE NGOMA SET ISIBO="GUKUNDIGIHUGU" WHERE ID="10";
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM NGOMA;
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+------------------+
+| ID   | F_NAME      | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR       | CELL      | EMAIL             | TELEPHONE  | ISIBO            |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+------------------+
+|    1 | dieudonne   | irakoze | M      | south    | huye       | ngoma        | ruhande   | diori@gmail.com   |  780808012 | AGACIRO          |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  780823712 | UBUDAHERANYWA    |
+|    3 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    |  782323232 | TWITANGIRIGIHUGU |
+|    4 | HABINGABIRE | bahati  | M      | west     | karongi    | kaganda      | gitega    | hatii@gmail.com   | 2147483647 | UMURAVA          |
+|    5 | Tuyishime   | nadia   | F      | west     | NYAMASHEKE | BUSOGO       | gitega    | nadi@gmail.com    | 2147483647 | INYANGAMUGAYO    |
+|    6 | HABINEZA    | bahati  | M      | west     | karongi    | kaganda      | gitega    | hBANEZi@gmail.com | 2147483647 | UBUDAKEMWA       |
+|    7 | TUYISHIME   | mary    | F      | east     | nyagatare  | kaganda      | gitega    | mary@gmail.com    | 2147483647 | AGACIRO          |
+|    8 | TUYISHIME   | BANI    | F      | east     | nyagatare  | kaganda      | gitega    | bani@gmail.com    | 2147483647 | AGACIRO          |
+|    9 | manirafasha | sala    | F      | east     | nyagatare  | nyarupfubire | gitega    | sala@gmail.com    | 2147483647 | UBUDAKEMWA       |
+|   10 | maniragaba  | saddy   | M      | east     | nyagatare  | nyarupfubire | NYABUBARE | SADDY@gmail.com   | 2147483647 | GUKUNDIGIHUGU    |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------+------------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE NGOMA DROP COLUMN TELEPHONE;
+Query OK, 10 rows affected (0.05 sec)
+Records: 10  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM NGOMA:
+    -> SELECT * FROM NGOMA;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':
+SELECT * FROM NGOMA' at line 1
+mysql> SELECT * FROM NGOMA;
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------------+
+| ID   | F_NAME      | L_NAME  | GENDER | PROVINCE | DISTRICT   | SECTOR       | CELL      | EMAIL             | ISIBO            |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------------+
+|    1 | dieudonne   | irakoze | M      | south    | huye       | ngoma        | ruhande   | diori@gmail.com   | AGACIRO          |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    | UBUDAHERANYWA    |
+|    3 | HABINGABIRE | Olivier | M      | south    | nyaruguru  | kaganda      | murehe    | habi@gmail.com    | TWITANGIRIGIHUGU |
+|    4 | HABINGABIRE | bahati  | M      | west     | karongi    | kaganda      | gitega    | hatii@gmail.com   | UMURAVA          |
+|    5 | Tuyishime   | nadia   | F      | west     | NYAMASHEKE | BUSOGO       | gitega    | nadi@gmail.com    | INYANGAMUGAYO    |
+|    6 | HABINEZA    | bahati  | M      | west     | karongi    | kaganda      | gitega    | hBANEZi@gmail.com | UBUDAKEMWA       |
+|    7 | TUYISHIME   | mary    | F      | east     | nyagatare  | kaganda      | gitega    | mary@gmail.com    | AGACIRO          |
+|    8 | TUYISHIME   | BANI    | F      | east     | nyagatare  | kaganda      | gitega    | bani@gmail.com    | AGACIRO          |
+|    9 | manirafasha | sala    | F      | east     | nyagatare  | nyarupfubire | gitega    | sala@gmail.com    | UBUDAKEMWA       |
+|   10 | maniragaba  | saddy   | M      | east     | nyagatare  | nyarupfubire | NYABUBARE | SADDY@gmail.com   | GUKUNDIGIHUGU    |
++------+-------------+---------+--------+----------+------------+--------------+-----------+-------------------+------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ID,F_NAME,L_NAME,ISIBO FROM NGOMA;
++------+-------------+---------+------------------+
+| ID   | F_NAME      | L_NAME  | ISIBO            |
++------+-------------+---------+------------------+
+|    1 | dieudonne   | irakoze | AGACIRO          |
+|    2 | HABINGABIRE | Olivier | UBUDAHERANYWA    |
+|    3 | HABINGABIRE | Olivier | TWITANGIRIGIHUGU |
+|    4 | HABINGABIRE | bahati  | UMURAVA          |
+|    5 | Tuyishime   | nadia   | INYANGAMUGAYO    |
+|    6 | HABINEZA    | bahati  | UBUDAKEMWA       |
+|    7 | TUYISHIME   | mary    | AGACIRO          |
+|    8 | TUYISHIME   | BANI    | AGACIRO          |
+|    9 | manirafasha | sala    | UBUDAKEMWA       |
+|   10 | maniragaba  | saddy   | GUKUNDIGIHUGU    |
++------+-------------+---------+------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM NGOMA WHERE GENDER ="M" and sector="ngoma";
++------+-----------+---------+--------+----------+----------+--------+---------+-----------------+---------+
+| ID   | F_NAME    | L_NAME  | GENDER | PROVINCE | DISTRICT | SECTOR | CELL    | EMAIL           | ISIBO   |
++------+-----------+---------+--------+----------+----------+--------+---------+-----------------+---------+
+|    1 | dieudonne | irakoze | M      | south    | huye     | ngoma  | ruhande | diori@gmail.com | AGACIRO |
++------+-----------+---------+--------+----------+----------+--------+---------+-----------------+---------+
+1 row in set (0.00 sec)
+
+mysql> select * from ngoma where gender="M" OR L_NAME="SADDY";
++------+-------------+---------+--------+----------+-----------+--------------+-----------+-------------------+------------------+
+| ID   | F_NAME      | L_NAME  | GENDER | PROVINCE | DISTRICT  | SECTOR       | CELL      | EMAIL             | ISIBO            |
++------+-------------+---------+--------+----------+-----------+--------------+-----------+-------------------+------------------+
+|    1 | dieudonne   | irakoze | M      | south    | huye      | ngoma        | ruhande   | diori@gmail.com   | AGACIRO          |
+|    2 | HABINGABIRE | Olivier | M      | south    | nyaruguru | kaganda      | murehe    | habi@gmail.com    | UBUDAHERANYWA    |
+|    3 | HABINGABIRE | Olivier | M      | south    | nyaruguru | kaganda      | murehe    | habi@gmail.com    | TWITANGIRIGIHUGU |
+|    4 | HABINGABIRE | bahati  | M      | west     | karongi   | kaganda      | gitega    | hatii@gmail.com   | UMURAVA          |
+|    6 | HABINEZA    | bahati  | M      | west     | karongi   | kaganda      | gitega    | hBANEZi@gmail.com | UBUDAKEMWA       |
+|   10 | maniragaba  | saddy   | M      | east     | nyagatare | nyarupfubire | NYABUBARE | SADDY@gmail.com   | GUKUNDIGIHUGU    |
++------+-------------+---------+--------+----------+-----------+--------------+-----------+-------------------+------------------+
+6 rows in set (0.00 sec)
+
+mysql> 
